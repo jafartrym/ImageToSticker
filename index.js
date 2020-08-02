@@ -93,7 +93,7 @@ async function msgHandler (client, message) {
                             const videoMeta = await tiktok(url)
                             const filename = videoMeta.authorMeta.name + '.mp4'
                             await client.sendFile(from, videoMeta.videobase64, filename, videoMeta.NoWaterMark ? '' : 'Maaf, video tanpa watermark tidak tersedia')
-                                .then(await client.sendText(from, `Metadata:\nUsername: ${videoMeta.authorMeta.name} \nMusic: ${videoMeta.musicMeta.musicName} \nView: ${videoMeta.playCount.toLocaleString()} \nLike: ${videoMeta.diggCount.toLocaleString()} \nComment: ${videoMeta.commentCount.toLocaleString()} \nShare: ${videoMeta.shareCount.toLocaleString()} \nCaption: ${videoMeta.text.trim() ? videoMeta.text : '-'} \n\nFollow Instagram aku ya : @jafartry.m Jangan lupa pokonya Follow, Untuk Download Video Jangan Spam ya HP Aku Lag wkwk \nTerimakasih.`))
+                                .then(await client.sendText(from, `Metadata:\nUsername: ${videoMeta.authorMeta.name} \nMusic: ${videoMeta.musicMeta.musicName} \nView: ${videoMeta.playCount.toLocaleString()} \nLike: ${videoMeta.diggCount.toLocaleString()} \nComment: ${videoMeta.commentCount.toLocaleString()} \nShare: ${videoMeta.shareCount.toLocaleString()} \nCaption: ${videoMeta.text.trim() ? videoMeta.text : '-'} \n\nFollow Instagram aku ya : @jafartry.m Jangan lupa pokonya Follow \nTerimakasih.`))
                                 .catch(err => console.log('Caught exception: ', err))
                         } else {
                             client.sendText(from, 'Maaf, Url yang kamu kirim tidak valid')
